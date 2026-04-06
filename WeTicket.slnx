@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="WeTicket.API/WeTicket.API.csproj" />
+  <Project Path="WeTicket.Data/WeTicket.Data/WeTicket.Data.csproj" />
+  <Project Path="WeTicket.Services/WeTicket.Services.csproj" />
+</Solution>
