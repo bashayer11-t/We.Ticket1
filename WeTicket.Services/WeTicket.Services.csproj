@@ -15,8 +15,4 @@
     <ProjectReference Include="..\WeTicket.Data\WeTicket.Data\WeTicket.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Service\" />
-  </ItemGroup>
-
 </Project>

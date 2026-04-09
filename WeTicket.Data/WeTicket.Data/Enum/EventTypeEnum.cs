@@ -1,8 +1,8 @@
-namespace WeTicket.Data.EventTypeEnum;
+namespace WeTicket.Data.Enum;
 
 public enum EventTypeEnum
 {
-    Concert,
+    Concert = 1,
     Workshop,
     Conference,
     Sports,

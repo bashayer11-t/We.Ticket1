@@ -20,10 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\WeTicket.Data\WeTicket.Data\WeTicket.Data.csproj" />
     <ProjectReference Include="..\WeTicket.Services\WeTicket.Services.csproj" />
   </ItemGroup>

@@ -1,6 +1,8 @@
 using WeTicket.API.Extensions;
 using WeTicket.Data.Configurations;
 using WeTicket.Services.Configurations;
+using WeTicket.Services.IService;
+using WeTicket.Services.Service;
 //using WeTicket.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +15,7 @@ builder.Services.AddApplicationServices();
 
 // API Layer
 builder.Services.AddApiLayer(builder.Configuration);
+builder.Services.AddScoped<ICategoryService, CategoryService>(); builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 var app = builder.Build();
 

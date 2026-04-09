@@ -25,6 +25,16 @@ public partial class AppDbContext(DbContextOptions<AppDbContext> options) : Iden
         builder.Entity<IdentityUserLogin<string>>().ToTable("UserLogin");
         builder.Entity<IdentityUserToken<string>>().ToTable("UserToken");
         builder.Entity<IdentityRoleClaim<string>>().ToTable("RoleClaim");
+        builder.Entity<Ticket>()
+    .HasOne(t => t.User)
+    .WithMany()
+    .HasForeignKey(t => t.UserId)
+    .OnDelete(DeleteBehavior.NoAction);
+        builder.Entity<Review>()
+    .HasOne(r => r.User)
+    .WithMany()
+    .HasForeignKey(r => r.UserId)
+    .OnDelete(DeleteBehavior.NoAction);
     }
 
   
