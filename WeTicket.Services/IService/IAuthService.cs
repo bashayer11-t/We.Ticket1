@@ -1,6 +1,13 @@
-namespace WeTicket.Services.IService;
+using WeTicket.Data.DTOs;
 
-public class IAuthService
+namespace WeTicket.Services.IService
 {
-    
+    public interface IAuthService
+    {
+        Task<AuthModel> RegisterAsync(RegisterModel model);
+        Task<AuthModel> GetTokenAsync(TokenRequestModel model);
+        Task<string> AddRoleAsync(AddRoleModel model);
+        Task<AuthModel> RefreshTokenAsync(string token);
+        Task<bool> RevokeTokenAsync(string token);
+    }
 }

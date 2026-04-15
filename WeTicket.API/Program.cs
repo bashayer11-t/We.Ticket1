@@ -1,33 +1,25 @@
 using WeTicket.API.Extensions;
 using WeTicket.Data.Configurations;
 using WeTicket.Services.Configurations;
-using WeTicket.Services.IService;
-using WeTicket.Services.Service;
-//using WeTicket.AspNetCore;
+using Scalar.AspNetCore;
+using WeTicket.API.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
-
 // Data Layer
 builder.Services.AddProjectDataLayer(builder.Configuration);
-
 // Business Layer (Services Layer)
 builder.Services.AddApplicationServices();
-
 // API Layer
 builder.Services.AddApiLayer(builder.Configuration);
-builder.Services.AddScoped<ICategoryService, CategoryService>(); builder.Services.AddScoped<ICategoryService, CategoryService>();
-
 var app = builder.Build();
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
-    //app.MapScalarApiReference();
+    app.MapScalarApiReference();
     //builder.WebHost.UseUrls("http://0.0.0.0:7072");
 }
-
-app.UseCors("WeTicketAPI");
+app.UseCors("WeTicket");
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();

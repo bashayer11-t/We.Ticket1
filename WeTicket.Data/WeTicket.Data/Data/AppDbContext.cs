@@ -36,7 +36,4 @@ public partial class AppDbContext(DbContextOptions<AppDbContext> options) : Iden
     .HasForeignKey(r => r.UserId)
     .OnDelete(DeleteBehavior.NoAction);
     }
-
-  
-
 }
